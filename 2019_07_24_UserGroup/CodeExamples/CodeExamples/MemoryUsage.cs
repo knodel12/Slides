@@ -90,6 +90,22 @@ namespace CodeExamples
             Console.WriteLine(seventhTest);
         }
 
+        public static void SomeMethodThatUsesDelegates()
+        {
+            Action methodDelegate = SomeMethod; // Creates new Delegate every time
+            Action lambdaDelegate = () => { }; // Cached by runtime, local memory retained
+            void SomeLocalFunction()
+            {
+
+            }
+            Action localDelegate = SomeLocalFunction; // Creates new delegate, AND retains memory
+
+
+            methodDelegate();
+            lambdaDelegate();
+            localDelegate();
+        }
+
         public static void SomeMethod()
         {
 

@@ -16,13 +16,13 @@ namespace CodeExamples
                 ("CPU Usage", CPUUsage.RunCPUTests)
             };
 
-            for (int i = 0; i < programsToRun.Count; i++)
-            {
-                Console.WriteLine($"{i + 1}: {programsToRun[i].Name}");
-            }
-
             while (true)
             {
+                Console.WriteLine();
+                for (int i = 0; i < programsToRun.Count; i++)
+                {
+                    Console.WriteLine($"{i + 1}: {programsToRun[i].Name}");
+                }
                 Console.WriteLine();
                 Console.Write("Run Program: ");
                 var input = Console.ReadLine();
